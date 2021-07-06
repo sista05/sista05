@@ -8,4 +8,4 @@
 
 ### Profile
 
-[My Profile 👺](https://github.com/sista05/Curriculum-Vitae).
+[My Profile](https://github.com/sista05/Curriculum-Vitae).
