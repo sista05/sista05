@@ -22,5 +22,5 @@ jobs:
         uses: EndBug/add-and-commit@v7.2.1
         with:
 	  # ブランチ名はデフォルトブランチ名にする(main or master)
-          branch: main  
+          branch: master
           message: ':rocket: Update'
