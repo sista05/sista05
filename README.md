@@ -9,7 +9,7 @@
 
 ### sista05's activity🌵 
 
-[![github-contribution-grid-snake](https://raw.githubusercontent.com/sista05/sista05/master/img/snake.svg)]
+![github-contribution-grid-snake](https://raw.githubusercontent.com/sista05/sista05/master/img/snake.svg)
 
 ### Profile
 
