@@ -11,8 +11,9 @@
 
 ![github-contribution-grid-snake](https://raw.githubusercontent.com/sista05/sista05/master/img/snake.svg)
 
-### Profile
+## Profile
 
+**See below for details.**<br>
 [My Profile](https://github.com/sista05/Curriculum-Vitae).
 
 ![CurriculumVitae](img/CurriculumVitae.png)
