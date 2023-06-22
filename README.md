@@ -14,6 +14,6 @@
 ## Profile
 
 **See below for details.**<br>
-[My Profile](https://github.com/sista05/Curriculum-Vitae)/[CurriculumVitae](https://datamarket.co.jp/CurriculumVitae.pdf)
+[職務経歴書](https://github.com/sista05/Curriculum-Vitae) | [Resume(En)](https://datamarket.co.jp/Resume.pdf)
 
 ![CurriculumVitae](img/CurriculumVitae.png)
