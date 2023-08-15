@@ -8,11 +8,7 @@
 
 
 ### sista05's activity🌵
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./img/github-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./img/ocean.gif">
-  <img alt="Github Snake" src="./img/ocean.gif">
-</picture>
+![github-contribution-grid-snake](https://raw.githubusercontent.com/sista05/sista05/master/img/github-snake-dark.svg)
 
 ## Profile
 
