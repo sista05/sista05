@@ -4,14 +4,28 @@ on:
   schedule:
     - cron: "0 1 * * *"
 
+permissions:
+  contents: write
+
 jobs:
   update-repository:
     name: Update this repo's README with repository_owner
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Choose today's grass level
+        id: grass
+        shell: bash
+        run: |
+          # 0 means no commit today. 1-5 is the number of commits to create.
+          level=$((RANDOM % 6))
+          echo "level=${level}" >> "$GITHUB_OUTPUT"
+          echo "Today's grass level: ${level}"
+
       - name: Generate Snake
+        if: steps.grass.outputs.level != '0'
         uses: Platane/snk@v3
         id: snake-gif
         with:
@@ -22,9 +36,25 @@ jobs:
             ./img/ocean.svg?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Push to GitHub
-        uses: EndBug/add-and-commit@v9
-        with:
-          branch: master
-          message: ':rocket: Update'
+
+      - name: Commit today's grass
+        if: steps.grass.outputs.level != '0'
+        shell: bash
+        env:
+          GRASS_LEVEL: ${{ steps.grass.outputs.level }}
+          REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: |
+          git config user.name "$REPOSITORY_OWNER"
+          git config user.email "$REPOSITORY_OWNER@users.noreply.github.com"
+
+          for ((i = 1; i <= GRASS_LEVEL; i++)); do
+            printf '%s\n' \
+              "run=${GITHUB_RUN_ID}" \
+              "level=${GRASS_LEVEL}" \
+              "commit=${i}" \
+              "random=${RANDOM}" > img/.grass-seed
+            git add img
+            git commit -m ":seedling: Grow grass ${i}/${GRASS_LEVEL}"
+          done
+
+          git push origin HEAD:master
