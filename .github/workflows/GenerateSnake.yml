@@ -19,8 +19,8 @@ jobs:
         id: grass
         shell: bash
         run: |
-          # 0 means no commit today. 1-5 is the number of commits to create.
-          level=$((RANDOM % 6))
+          # 0 means no commit today. 1-10 is the number of commits to create.
+          level=$((RANDOM % 11))
           echo "level=${level}" >> "$GITHUB_OUTPUT"
           echo "Today's grass level: ${level}"
 
